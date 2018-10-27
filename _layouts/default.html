@@ -14,7 +14,9 @@
     {% else %}
       {% assign page-title = site.title | escape %}
     {% endif %}
-
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
     <title>{{ page-title }}</title>
 
     {% if site.gems contains "jekyll-seo-tag" %}
