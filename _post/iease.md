@@ -1,0 +1,63 @@
+---
+layout: post
+title: '在Windows上构建iease music'
+subtitle: '作者为什么不给Windows编译啊'
+date: 2018-10-27
+categories: 杂
+cover: 'https://raw.githubusercontent.com/trazyn/ieaseMusic/dev/screenshots/preview.gif'
+tags: 技术
+---
+
+
+因为正好有msys环境所以直接用msys吧  
+准备：  
+===
+首先确保安装git,mingw-w64-i686-nodejs,mingw-w64-i686-npm这几个包  
+>（注意mingw-w64-i686-npm是nodejs包里给出的可选依赖，但实际上nodejs的包里已经有npm  
+
+```
+pacman -S git
+
+pacman -S mingw-w64-i686-nodejs
+#32位
+
+pacman -S mingw-w64-x86_64-nodejs
+#64位
+```
+
+此时npm不能正常使用因为缺少了libcares-2.dll，可以从dllme下载并放到/bin/里面。（与npm同目录）
+
+下载源码
+===  
+
+```
+git clone https://github.com/trazyn/ieaseMusic.git
+```
+
+cd到源码目录
+然后  
+
+```
+git clone https://github.com/trazyn/NeteaseCloudMusicApi.git
+npm install
+```  
+
+如果国内无法访问或访问慢可以用淘宝的镜像源  
+
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install
+```
+
+打包
+===  
+
+```
+npm run package-win
+```  
+
+安装
+===
+点开release文件夹中的exe文件
+
+>以上是我 摸索了好久才搞完的QwQ
