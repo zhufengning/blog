@@ -4,6 +4,8 @@ title: Contact
 tagline: Create a contact form and you are good to go
 ---
 
+主题作者的东西，还是保留一下吧  
+
 Jekyll is a great tool to create static sites but with static site, there's no backend to send your data to: that is why it's hard to put a form on a Jekyll site.
 
 Here listed some resources which provide  a saas service as a backend for forms (contact forms, hiring forms, etc.) to designers and developers like you:
