@@ -35,9 +35,49 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("noip2018 ","rp++","rp++ ","rp++","rp++","rp++","rp++ ","rp++","rp++","rp++","rp++","rp++");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
 
   </head>
   <body>
+<div class="Snow">
+    <style>
+        canvas {
+            position:fixed;
+            z-index:-999;
+        }
+    </style>
+    <canvas id="Snow" width="1282" height="759"></canvas>
+</div>
+<script src="https://leanote.com/public/upload/488/5965df49ab644154610012c8/themes/5b421912ab64410aaf0014e4/snow.js"></script>
 
     {% include site-header.html %}
 
